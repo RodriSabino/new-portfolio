@@ -1,0 +1,22 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCE = [
+  {
+    date: "Junio 2024",
+    title: "QA Trainee",
+    company: "Visma, Lima",
+    description:
+      "Como QA Trainee en Visma, asumí la responsabilidad de diseñar casos de prueba, tanto manuales como automatizados, para certificar las funcionalidades de las aplicaciones. Estimé el tiempo necesario para la creación y ejecución de estos casos, garantizando un plan de trabajo preliminar efectivo. Ejecuté pruebas manuales y utilicé herramientas como Postman para la automatización, cumpliendo con los plazos acordados y los compromisos con otras áreas.",
+  },
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
