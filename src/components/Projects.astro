@@ -1,0 +1,154 @@
+---
+import GitHub from "./icons/GitHub.astro"
+import Link from "./icons/Link.astro"
+import LinkButton from "./LinkButton.astro"
+import PythonIcon from "./icons/Python.astro"
+import FlaskIcon from "./icons/Flask.astro"
+import AngularIcon from "./icons/Angular.astro"
+import FlutterIcon from "./icons/Flutter.astro"
+import SpringIcon from "./icons/Spring.astro"
+import KotlinIcon from "./icons/Kotlin.astro"
+import VueIcon from "./icons/Vue.astro"
+import AspNetIcon from "./icons/Asp.astro"
+import MySQLIcon from "./icons/Mysql.astro"
+
+const TAGS = {
+  PYTHON: {
+    name: "Python",
+    class: "bg-[#3B3B6D] text-white",
+    icon: PythonIcon, // Reemplazar con el componente de ícono correspondiente
+  },
+  FLASK: {
+    name: "Flask",
+    class: "bg-[#333333] text-white",
+    icon: FlaskIcon, // Reemplazar con el componente de ícono correspondiente
+  },
+  ANGULAR: {
+    name: "Angular",
+    class: "bg-[#8B0000] text-white",
+    icon: AngularIcon, // Reemplazar con el componente de ícono correspondiente
+  },
+  FLUTTER: {
+    name: "Flutter",
+    class: "bg-[#004466] text-white",
+    icon: FlutterIcon, // Reemplazar con el componente de ícono correspondiente
+  },
+  SPRING: {
+    name: "Spring Boot",
+    class: "bg-[#2F4F2F] text-white",
+    icon: SpringIcon, // Reemplazar con el componente de ícono correspondiente
+  },
+  KOTLIN: {
+    name: "Kotlin",
+    class: "bg-[#5B3A67] text-white",
+    icon: KotlinIcon, // Reemplazar con el componente de ícono correspondiente
+  },
+  VUE: {
+    name: "Vue.js",
+    class: "bg-[#3A1A68] text-white",
+    icon: VueIcon, // Reemplazar con el componente de ícono correspondiente
+  },
+  ASPNET: {
+    name: "ASP.NET Core",
+    class: "bg-[#3A1A68] text-white",
+    icon: AspNetIcon, // Reemplazar con el componente de ícono correspondiente
+  },
+  MYSQL: {
+    name: "MySQL",
+    class: "bg-[#003333] text-white",
+    icon: MySQLIcon, // Reemplazar con el componente de ícono correspondiente
+  },
+};
+const PROJECTS = [
+  {
+    title: "SatelitPeru - Optimización de rutas de electrificación rural",
+    description:
+      "Aplicación para optimizar rutas de electrificación rural utilizando algoritmos de grafos. Incluye visualización geoespacial interactiva y gestión de datos. Desarrollada con Flask, Python, NetworkX y Folium.",
+    link: "https://complejidad-algoritmica-ws6d.github.io/landing-page/",
+    github: null,
+    image: "/projects/satelitperu.webp",
+    tags: [TAGS.PYTHON, TAGS.FLASK],
+  },
+  {
+    title: "TransportApp - Solución IoT para transporte",
+    description:
+      "Aplicación IoT con monitoreo en tiempo real para transporte. Incluye integración de sensores IoT (DHT22, HX711, GPS NEO-6M) y despliegue en Azure, Netlify y Firebase. Desarrollada con Angular, Flutter y Spring Boot.",
+    link: "https://github.com/upc-pre-202402-si572-ws71-Castores",
+    github: "https://github.com/upc-pre-202402-si572-ws71-Castores",
+    image: "/projects/transportapp.webp",
+    tags: [TAGS.ANGULAR, TAGS.FLUTTER, TAGS.SPRING],
+  },
+  {
+    title: "Fastporte - Plataforma de conexión para transportistas",
+    description:
+      "Aplicación que conecta transportistas con clientes. Versión web desarrollada con Angular y Spring Boot, versión móvil en Kotlin. Incluye gestión de datos con MySQL.",
+    link: "https://tech-company-sw52.github.io/landing-page/",
+    github: null,
+    image: "/projects/fastporte.webp",
+    tags: [TAGS.ANGULAR, TAGS.SPRING, TAGS.KOTLIN],
+  },
+  {
+    title: "TakeMeHome - Envíos internacionales",
+    description:
+      "Aplicación web para envíos internacionales con interfaz amigable en Vue.js, lógica de negocio en ASP.NET Core y gestión de datos con MySQL.",
+    link: "https://takemehome-del-mundo-a-tus-manos.github.io/landing-page/",
+    github: null,
+    image: "/projects/takemehome.webp",
+    tags: [TAGS.VUE, TAGS.ASPNET, TAGS.MYSQL],
+  },
+];
+---
+
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+  <div class="w-full md:w-1/2">
+    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+      <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+    </div>
+  </div>
+
+  <div class="w-full md:w-1/2 md:max-w-lg">
+    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+      {title}
+    </h3>
+    <div class="flex flex-wrap mt-2">
+      <ul class="flex flex-row mb-2 gap-x-2">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+              >
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
+      <footer class="flex items-end justify-start mt-4 gap-x-4">
+          {github && (
+            <LinkButton href={github}>
+              <GitHub class="size-6" />
+              Code
+              
+            </LinkButton>
+          )}
+          {link && (
+            <LinkButton href={link}>
+              <Link class="size-4" />
+              Preview
+            </LinkButton>
+          )}
+        </footer>
+    </div>
+  </div>
+</article>
+    ))
+  }
+</div>
+
+
+
