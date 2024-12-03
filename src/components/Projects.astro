@@ -1,41 +1,102 @@
 ---
 import GitHub from "./icons/GitHub.astro"
-import NextJS from "./icons/NextJS.astro"
-import Tailwind from "./icons/Tailwind.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
+import PythonIcon from "./icons/Python.astro"
+import FlaskIcon from "./icons/Flask.astro"
+import AngularIcon from "./icons/Angular.astro"
+import FlutterIcon from "./icons/Flutter.astro"
+import SpringIcon from "./icons/Spring.astro"
+import KotlinIcon from "./icons/Kotlin.astro"
+import VueIcon from "./icons/Vue.astro"
+import AspNetIcon from "./icons/Asp.astro"
+import MySQLIcon from "./icons/Mysql.astro"
 
 const TAGS = {
-  NEXT: {
-    name: "Next.js",
-    class: "bg-black text-white",
-    icon: NextJS,
+  PYTHON: {
+    name: "Python",
+    class: "bg-[#3B3B6D] text-white",
+    icon: PythonIcon, // Reemplazar con el componente de ícono correspondiente
   },
-  TAILWIND: {
-    name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
-    icon: Tailwind,
+  FLASK: {
+    name: "Flask",
+    class: "bg-[#333333] text-white",
+    icon: FlaskIcon, // Reemplazar con el componente de ícono correspondiente
   },
-}
+  ANGULAR: {
+    name: "Angular",
+    class: "bg-[#8B0000] text-white",
+    icon: AngularIcon, // Reemplazar con el componente de ícono correspondiente
+  },
+  FLUTTER: {
+    name: "Flutter",
+    class: "bg-[#004466] text-white",
+    icon: FlutterIcon, // Reemplazar con el componente de ícono correspondiente
+  },
+  SPRING: {
+    name: "Spring Boot",
+    class: "bg-[#2F4F2F] text-white",
+    icon: SpringIcon, // Reemplazar con el componente de ícono correspondiente
+  },
+  KOTLIN: {
+    name: "Kotlin",
+    class: "bg-[#5B3A67] text-white",
+    icon: KotlinIcon, // Reemplazar con el componente de ícono correspondiente
+  },
+  VUE: {
+    name: "Vue.js",
+    class: "bg-[#3A1A68] text-white",
+    icon: VueIcon, // Reemplazar con el componente de ícono correspondiente
+  },
+  ASPNET: {
+    name: "ASP.NET Core",
+    class: "bg-[#3A1A68] text-white",
+    icon: AspNetIcon, // Reemplazar con el componente de ícono correspondiente
+  },
+  MYSQL: {
+    name: "MySQL",
+    class: "bg-[#003333] text-white",
+    icon: MySQLIcon, // Reemplazar con el componente de ícono correspondiente
+  },
+};
 const PROJECTS = [
   {
-    title: "SVGL - A beautiful library with SVG logos",
+    title: "SatelitPeru - Optimización de rutas de electrificación rural",
     description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Aplicación para optimizar rutas de electrificación rural utilizando algoritmos de grafos. Incluye visualización geoespacial interactiva y gestión de datos. Desarrollada con Flask, Python, NetworkX y Folium.",
+    link: "https://complejidad-algoritmica-ws6d.github.io/landing-page/",
+    github: null,
+    image: "/projects/satelitperu.webp",
+    tags: [TAGS.PYTHON, TAGS.FLASK],
   },
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+    title: "TransportApp - Solución IoT para transporte",
     description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
-    image: "/projects/adventjs.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Aplicación IoT con monitoreo en tiempo real para transporte. Incluye integración de sensores IoT (DHT22, HX711, GPS NEO-6M) y despliegue en Azure, Netlify y Firebase. Desarrollada con Angular, Flutter y Spring Boot.",
+    link: "https://github.com/upc-pre-202402-si572-ws71-Castores",
+    github: "https://github.com/upc-pre-202402-si572-ws71-Castores",
+    image: "/projects/transportapp.webp",
+    tags: [TAGS.ANGULAR, TAGS.FLUTTER, TAGS.SPRING],
   },
-]
+  {
+    title: "Fastporte - Plataforma de conexión para transportistas",
+    description:
+      "Aplicación que conecta transportistas con clientes. Versión web desarrollada con Angular y Spring Boot, versión móvil en Kotlin. Incluye gestión de datos con MySQL.",
+    link: "https://tech-company-sw52.github.io/landing-page/",
+    github: null,
+    image: "/projects/fastporte.webp",
+    tags: [TAGS.ANGULAR, TAGS.SPRING, TAGS.KOTLIN],
+  },
+  {
+    title: "TakeMeHome - Envíos internacionales",
+    description:
+      "Aplicación web para envíos internacionales con interfaz amigable en Vue.js, lógica de negocio en ASP.NET Core y gestión de datos con MySQL.",
+    link: "https://takemehome-del-mundo-a-tus-manos.github.io/landing-page/",
+    github: null,
+    image: "/projects/takemehome.webp",
+    tags: [TAGS.VUE, TAGS.ASPNET, TAGS.MYSQL],
+  },
+];
 ---
 
 <div class="flex flex-col gap-y-16">
